@@ -1,0 +1,38 @@
+repos:
+  - repo: local
+    hooks:
+      - id: isort
+        name: isort
+        entry: isort
+        require_serial: true
+        language: python
+        language_version: python3
+        types_or: [cython, pyi, python]
+        args: ["--filter-files"]
+        minimum_pre_commit_version: 2.9.0
+      - id: black
+        name: black
+        entry: black
+        require_serial: true
+        language: python
+        language_version: python3
+        types_or: [python, pyi]
+        minimum_pre_commit_version: 2.9.2
+      - id: pylint
+        name: pylint
+        entry: pylint
+        language: system
+        types: [python]
+        args: ["-rn", "-sn", "--rcfile=.pylintrc", "--fail-on=I"]
+      - id: mypy
+        name: mypy
+        entry: mypy
+        require_serial: true
+        language: python
+        types: [python]
+        args: [--disallow-untyped-defs, --disallow-incomplete-defs]
+      - id: ruff
+        name: ruff
+        entry: ruff
+        language: python
+        types: [python]
