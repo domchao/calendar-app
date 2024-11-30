@@ -1,3 +1,3 @@
 # Calendar Reader
 
-A mono-repo for using GenAI (ChatGPT4-o) to extract handwritten information from a calendar.
+A mono-repo for using GenAI (GPT-4o) to extract handwritten information from a calendar.
